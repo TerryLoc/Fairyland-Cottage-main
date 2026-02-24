@@ -1,0 +1,17 @@
+core.Microsoft*
+core.mongo*
+core.python*
+env.py
+__pycache__/
+*.py[cod]
+node_modules/
+.github/
+cloudinary_python.txt
+# runtime / private
+/data/
+/private_downloads/
+/tokens.txt
+/tokens.txt.bak
+/vendor/
+/logs/
+.DS_Store

@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/*Website colors*/
+:root {
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: #f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Beige */
+  --font-color2: #e9ead6;
+}
+
+/* video sections layout mobile devices */
+.video-section {
+  margin: 0 auto;
+  margin-right: 61px;
+  min-height: 100vh;
+}
+
+.text {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titles {
+  padding: 30px 0 10px;
+  font-size: 90%;
+  text-align: center;
+  line-height: 20px;
+}
+
+.text p {
+  font-size: 1.1rem;
+  padding-top: 30px;
+  text-align: justify;
+  max-width: 350px;
+  line-height: 120%;
+}
+
+/* The element which contains the videos */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.video {
+  max-width: 95%;
+  margin-top: 60px;
+  border-radius: 20px;
+  padding: 2px;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 3px 3px 15px rgba(0, 00, 0, 0.6);
+}
+
+/* Color change to split video sections */
+.middle {
+  background-color: var(--font-color1);
+  color: var(--font-color2);
+}
+
+.middle > .container .video {
+  border: 1px solid var(--font-color1);
+}
+
+/* Hide radio buttons */
+input {
+  display: none;
+}
+
+/* Adjust visual display for screens bigger then 550px but less then 768px */
+@media screen and (min-width: 550px) {
+  .video {
+    min-width: 70%;
+    height: 250px;
+  }
+}
+
+/* Adjust design for larger screens */
+@media screen and (min-width: 768px) {
+  .video-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 50px 0;
+  }
+
+  .titles {
+    padding-top: 0;
+  }
+
+  .text p {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  /* Video sections */
+  /* A grid display to stack videos to create a slider */
+  .container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    /*When videos side they are hidden */
+    overflow: hidden;
+  }
+
+  .container .video {
+    grid-column: 2/ 9;
+    grid-row: 1/ 5;
+    height: 400px;
+    width: 100%;
+    max-width: 700px;
+    /* Timing of the sidlers movement */
+    transition: all 3s ease;
+  }
+
+  .video {
+    margin: 0;
+    box-shadow: 3px 3px 15px rgba(0, 00, 0, 0.4);
+  }
+
+  .container input {
+    display: none;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  /* Selection dots to choose video */
+  .dots label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid var(--font-color1) 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 8px;
+  }
+
+  .middle .dots label {
+    border: solid var(--secondary-color) 2px;
+  }
+
+  .middle .dots label:hover {
+    background: var(--secondary-color);
+  }
+
+  .dots label:hover {
+    background: var(--font-color1);
+  }
+
+  /*  video movements */
+  #vid1:checked ~ .video-1 {
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  #vid2:checked ~ .video-2 {
+    margin-left: 200%;
+  }
+
+  #vid3:checked ~ .video-3 {
+    margin-left: -200%;
+  }
+
+  #vid4:checked ~ .video-1 {
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  #vid5:checked ~ .video-2 {
+    margin-left: 200%;
+  }
+
+  #vid6:checked ~ .video-3 {
+    margin-left: -200%;
+  }
+
+  #vid7:checked ~ .video-1 {
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  #vid8:checked ~ .video-2 {
+    margin-left: 200%;
+  }
+
+  #vid9:checked ~ .video-3 {
+    margin-left: -200%;
+  }
+}
+
+/* Adjustment to styling to help visual appearance for bigger screens */
+@media screen and (min-width: 1600px) {
+  .text {
+    padding-top: 20px;
+  }
+
+  .text .titles {
+    font-size: 100%;
+  }
+
+  .video-section p {
+    font-size: 110%;
+  }
+}
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+  .video-section {
+    height: 90vh;
+  }
+
+  .text p {
+    max-width: 900px;
+    margin-bottom: 20px;
+    font-size: 110%;
+    margin-bottom: 40px;
+  }
+
+  /* Expand container size to adjust video display for 4K screens */
+  .container {
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
+    margin-bottom: 30px;
+  }
+
+  .container .video {
+    grid-column: 2 / 9;
+    grid-row: 1 / 5;
+    height: 600px;
+    min-width: 100%;
+  }
+
+  .dots label {
+    height: 20px;
+    width: 20px;
+  }
+}

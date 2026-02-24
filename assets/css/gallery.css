@@ -1,0 +1,47 @@
+/*Website colors*/
+:root {
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: #f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Beige */
+  --font-color2: #e9ead6;
+}
+
+/* Gallery */
+#photos {
+  align-items: center;
+  width: 85%;
+}
+
+#photos img {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1px;
+}
+
+/* Media query: large or landscape phones 576px & up */
+@media screen and (min-width: 425px) {
+  #photos {
+    width: 100%;
+  }
+}
+
+/* To add an extra column to image galley */
+@media screen and (min-width: 1024px) {
+  /* Gallery */
+  #photos {
+    column-gap: 1px;
+    column-count: 2;
+  }
+}
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+  main {
+    margin-top: 290px;
+  }
+}

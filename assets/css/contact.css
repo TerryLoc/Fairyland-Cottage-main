@@ -1,0 +1,234 @@
+/*Website colors*/
+:root {
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: #f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Beige */
+  --font-color2: #e9ead6;
+}
+
+main {
+  background: url(../images/webimages/fieldwalk.webp) center center/cover;
+  width: 100%;
+  min-height: 1000px;
+  position: relative;
+}
+
+/*contact form*/
+#contact {
+  position: absolute;
+  top: 50px;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(65, 70, 45, 0.7);
+  color: var(--font-color2);
+  border-radius: 0 50px 50px 0;
+  padding: 20px 0 20px 0;
+}
+
+#contact > h2 {
+  margin-top: 30px;
+  font-size: 50%;
+  text-align: center;
+}
+
+#contact > p {
+  margin-top: 10px;
+  font-size: 70%;
+  text-align: center;
+}
+
+#contact-form {
+  width: 80%;
+  margin: 40px 10px 40px 0;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+}
+
+.text-input::placeholder,
+#message::placeholder {
+  color: rgba(233, 234, 214, 0.6);
+  font-size: 80%;
+}
+
+#contact-form > label {
+  margin-top: 10px;
+  font-size: 80%;
+  margin-bottom: 20px;
+}
+
+.text-input {
+  letter-spacing: 1px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.text-input,
+#message {
+  background: transparent;
+  color: var(--font-color2);
+  width: 100%;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+/* Button */
+.send-button {
+  width: 100%;
+  color: var(--font-color1);
+  background-color: var(--main-color);
+  font-size: 80%;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* dynamically change its color */
+.send-button:hover {
+  transition: 0.2s ease-in;
+  color: var(--main-color);
+  background-color: var(--font-color1);
+  border: 1px solid var(--main-color);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* To help visual on contact form for screens bigger then 425px but less then 768px */
+@media screen and (min-width: 425px) {
+  #contact > h2 {
+    font-size: 90%;
+  }
+
+  #contact > p {
+    font-size: 70%;
+  }
+}
+
+/* Media query: tablet and up (768px & up) */
+@media screen and (min-width: 768px) {
+  /*New Image*/
+  main {
+    background: url(../images/webimages/walking.webp) center center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* Contact form */
+  #contact {
+    left: -40%;
+    right: -60%;
+    top: 130px;
+    border-radius: 10px;
+    max-width: 600px;
+  }
+
+  #contact > h2 {
+    font-size: 110%;
+  }
+
+  #contact > p {
+    font-size: 90%;
+  }
+
+  #contact-form > label {
+    font-size: 90%;
+  }
+
+  .text-input::placeholder,
+  #message::placeholder {
+    font-size: 80%;
+  }
+}
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+  /* Contact form */
+  #contact {
+    margin-top: 50px;
+    max-width: 1100px;
+  }
+
+  #contact > h2 {
+    font-size: 140%;
+    padding-bottom: 10px;
+  }
+
+  #contact > p {
+    font-size: 95%;
+  }
+
+  #contact-form > label {
+    font-size: 110%;
+    padding-bottom: 20px;
+  }
+
+  .text-input {
+    padding: 20px 10px;
+    height: 50px;
+  }
+
+  #message {
+    padding: 20px 10px;
+    height: 200px;
+  }
+
+  input {
+    font-size: 80%;
+  }
+
+  textarea {
+    font-size: inherit;
+  }
+
+  .send-button {
+    height: 50px;
+    font-size: 80%;
+  }
+}

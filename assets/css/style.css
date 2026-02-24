@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/*Website colors*/
+:root {
+  /* color: Timberwolf */
+  --main-color: #ded5cd;
+  /* color: Linen */
+  --secondary-color: #f3eae2;
+  /* color: Dark moss-green */
+  --font-color1: #41462d;
+  /* color: Beige */
+  --font-color2: #e9ead6;
+}
+
+/*Generic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Josefin Slab', serif;
+  letter-spacing: 1px;
+  color: var(--font-color1);
+  background-color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.top-header {
+  display: none;
+  text-decoration: none !important; 
+}
+
+.hidden-heading {
+  display: none;
+}
+
+/* Side bar Navbar */
+.side-nav {
+  background-color: var(--main-color);
+  position: fixed;
+  right: 0;
+  text-align: center;
+  bottom: 0;
+  top: 0;
+  border-left: 1px solid var(--font-color1);
+  padding: 0 5px 0 5px;
+  z-index: 10;
+}
+
+#img-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-elements {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-nav img {
+  margin-top: 15px;
+  height: 100vw;
+  width: 100vw;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 15px auto;
+}
+
+/* set position for link pages */
+.side-nav p {
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  margin-bottom: 20px;
+  font-size: 0.5rem;
+}
+
+/* Navbar toggle */
+#menu-bar {
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 0 1rem;
+  display: none;
+  top: 100%;
+}
+
+#nav-toggle:checked ~ nav {
+  display: block;
+}
+
+#nav-toggle,
+#nav-toggle2 {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 1.3rem;
+}
+
+#menu-bar a {
+  text-decoration: none;
+  color: var(--font-color1);
+}
+
+#menu-bar ul {
+  text-align: center;
+  list-style-type: none;
+}
+
+#menu-bar ul li {
+  margin-top: 10px;
+}
+/* visual indicator to let user know which link is being triggered */
+#menu-bar a:hover {
+  color: var(--font-color2);
+  text-shadow: 1px 1px 1px var(--font-color1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+
+}
+
+/* Social links */
+#social-links {
+  padding: 10px 0;
+  flex-direction: column;
+  list-style-type: none;
+  overflow: scroll;
+}
+
+#social-links i {
+  margin-top: 1px;
+  font-size: 1.8rem;
+  color: var(--font-color1);
+  padding-bottom: 15px;
+}
+
+/* Main */
+.hidden-title {
+  display: none;
+}
+
+#big-hero {
+  display: none;
+}
+
+/* small and mobile device screens image */
+#hero-img {
+  background: url(../images/webimages/smallscreen.webp) center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* desktop screen image */
+#big-hero {
+  background: url(../images/webimages/house.webp) center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Title and slogan text on mobile */
+#intro-text {
+  position: absolute;
+  background-color: rgba(65, 70, 45, 0.7);
+  top: 60px;
+  width: fit-content;
+  min-height: 200px;
+  padding-top: 40px;
+  padding-left: 5px;
+  padding-right: 10px;
+  border-radius: 0 50px 50px 0;
+  color: var(--font-color2);
+}
+
+#intro-text h3 {
+  font-size: 120%;
+  text-align: left;
+  line-height: 150%;
+}
+
+#intro-text p {
+  font-size: 1.1rem;
+  margin-top: 15px;
+  text-align: left;
+  line-height: 150%;
+}
+
+/* Sections information*/
+.main-sections {
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
+  padding-right: 60px;
+}
+
+hr {
+  width: 50%;
+  margin: 10px 0 10px 0;
+}
+
+#welcome h2,
+#ethos h2 {
+  margin-top: 70px;
+  font-size: 90%;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#welcome p,
+#ethos p {
+  padding-bottom: 50px;
+  line-height: 120%;
+  font-size: 1.1rem;
+}
+
+#ethos {
+  padding-top: 20px;
+  background-color: var(--font-color1);
+  color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+  display: none;
+}
+
+/* Media query: tablet and up (768px & up) */
+@media screen and (min-width: 768px) {
+  /*Header*/
+  .side-nav {
+    display: none;
+  }
+
+  .top-header {
+    display: block;
+  }
+
+  .top-header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--main-color);
+    box-shadow: 0 1px 1px var(--font-color1);
+  }
+
+  .top-header img {
+    margin-top: 15px;
+    height: 100vw;
+    width: 100vw;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .top-header a {
+    text-decoration: none !important; /* Remove underline */
+    color: inherit;
+  }
+
+  .top-header a:hover {
+    color: var(--font-color2);
+    text-shadow: 1px 1px 1px var(--font-color1);
+    text-decoration: none !important; /* Remove underline */
+    cursor: pointer;
+}
+
+  #title {
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  /* Remove nav toggle */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  /* Nav bar */
+  #menu-bar2 {
+    display: flex;
+    background-color: var(--main-color);
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  #menu-bar2 ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    list-style-type: none;
+  }
+
+  #menu-bar2 ul li {
+    margin: 20px 20px 10px;
+
+  }
+
+  #menu-bar2 ul li:hover {
+    color: var(--font-color2);
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+
+  /* Main */
+  #hero-img {
+    display: none;
+  }
+
+  #big-hero {
+    display: block;
+  }
+
+  #intro-text2 p {
+    font-weight: 500;
+    position: absolute;
+    top: 41%;
+    left: 44%;
+    padding: 15px;
+    line-height: 150%;
+    font-size: 1.3rem;
+    background-color: rgba(191, 197, 195, 0.7);
+    border-radius: 30px;
+  }
+
+  main {
+    /* Make main element take up surplus & push footer down */
+    flex: 1 0 auto;
+    margin-top: 210px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Sections information*/
+  .main-sections {
+    max-width: 700px;
+    padding-right: 0;
+  }
+
+  #welcome,
+  #ethos {
+    margin-top: 30px;
+  }
+
+  #welcome h2,
+  #ethos h2 {
+    font-size: 125%;
+    text-align: left;
+  }
+
+  #welcome p,
+  #ethos p {
+    font-size: 115%;
+    margin: 50px 0;
+  }
+
+  /* Footer */
+  footer {
+    display: block;
+  }
+
+  #social-links2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    border-top: 1px solid var(--font-color1);
+    background-color: var(--main-color);
+    list-style-type: none;
+  }
+
+  #social-links2 p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  #social-links2 i {
+    margin-top: 0;
+    font-size: 2.5rem;
+    padding: 8px;
+    color: var(--font-color1);
+  }
+}
+
+/* Adjustment to styling to help visual appearance for bigger screens */
+@media screen and (min-width: 1600px) {
+  main {
+    margin-top: 230px;
+    font-size: 115%;
+  }
+
+  #title {
+    font-size: 1.8rem;
+    padding: 10px 0;
+  }
+
+  .top-header a {
+    font-size: 120%;
+    text-decoration: none !important; /* Remove underline */
+  }
+
+  /* landing Page */
+  #intro-text2 p {
+    font-size: 130%;
+  }
+
+  .main-sections {
+    min-width: 900px;
+  }
+}
+
+/* 4k screens */
+@media screen and (min-width: 2560px) {
+  main {
+    margin-top: 200px;
+    font-size: 170%;
+  }
+
+  /* Header */
+  .top-header img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  #title {
+    font-size: 2.8rem;
+    padding: 10px 0;
+  }
+
+  .top-header a {
+    font-size: 165%;
+  }
+
+  /* landing Page */
+
+  .main-sections {
+    min-width: 1200px;
+  }
+
+  /* Footer */
+  #social-links2 p {
+    font-size: 1.2rem;
+  }
+
+  #social-links2 i {
+    margin: 10px 0;
+    font-size: 3.5rem;
+  }
+}
