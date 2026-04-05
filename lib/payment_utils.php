@@ -115,7 +115,6 @@ function fc_request_paypal(string $method, string $url, ?string $accessToken = n
     $curlError = curl_error($curl);
     $curlErrno = curl_errno($curl);
     $httpCode = (int) curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
-    curl_close($curl);
 
     if ($response === false) {
         throw new RuntimeException('PayPal request failed: ' . $curlError . ' (' . $curlErrno . ')');
