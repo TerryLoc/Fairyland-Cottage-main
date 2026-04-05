@@ -33,6 +33,140 @@ main p {
   font-weight: 700;
 }
 
+.shop-offer {
+  width: min(980px, 92%);
+  margin: 28px auto 12px;
+  padding: 28px;
+  border: 1px solid rgba(65, 70, 45, 0.14);
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 234, 226, 0.96),
+    rgba(233, 234, 214, 0.78)
+  );
+  box-shadow: 0 18px 40px rgba(65, 70, 45, 0.08);
+}
+
+.shop-offer__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--main-color);
+  border: 1px solid rgba(65, 70, 45, 0.16);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.shop-offer__grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  align-items: start;
+}
+
+.shop-offer__copy h2 {
+  margin: 0 0 10px;
+  width: auto;
+  text-align: left;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.shop-offer__copy p {
+  width: auto;
+  margin: 0 0 14px;
+  text-align: left;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.shop-offer__list {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop-offer__list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.shop-offer__list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: -0.05rem;
+  font-size: 1.25rem;
+}
+
+.shop-offer__price {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 18px;
+}
+
+.buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.buy-button:hover {
+  text-decoration: none;
+}
+
+.shop-offer__badges {
+  margin-top: 14px;
+  font-size: 0.94rem;
+  color: rgba(65, 70, 45, 0.92);
+}
+
+.shop-offer__panel {
+  background: rgba(243, 234, 226, 0.8);
+  border: 1px solid rgba(65, 70, 45, 0.14);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.shop-offer__panel h3 {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+}
+
+.shop-offer__panel p {
+  width: auto;
+  margin: 0 0 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.shop-offer__pill {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--font-color1);
+  color: var(--font-color2);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.shop-offer__note {
+  font-size: 0.9rem;
+}
+
 /* ---------------- Paypal ---------------- */
 .pp-ZD9ZDFDDVSBMQ {
   display: flex;
@@ -86,7 +220,7 @@ form section {
   bottom: 20px;
   margin-top: 30px;
   padding: 0;
-  left: 10%; 
+  left: 10%;
   right: 10%;
 }
 
@@ -126,14 +260,34 @@ h1 {
 
 .testimonials {
   margin-top: 0;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 /* ---------------- Media Queries ---------------- */
 
 @media (max-width: 720px) {
   main {
-  padding-right: 60px;
+    padding-right: 60px;
+  }
+
+  .shop-offer {
+    width: calc(100% - 24px);
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  .shop-offer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-offer__copy h2,
+  .shop-offer__copy p,
+  .shop-offer__panel p {
+    text-align: center;
+  }
+
+  .shop-offer__panel {
+    text-align: center;
   }
 
   main h2 {
@@ -143,7 +297,7 @@ h1 {
   }
 
   .carousel-caption {
-    position: static;        /* no overlay */
+    position: static; /* no overlay */
     padding: 12px 16px;
     transform: none;
     background: transparent;
@@ -151,7 +305,7 @@ h1 {
     text-align: center;
   }
   .carousel-caption p {
-    background: none;        /* no dark box */
+    background: none; /* no dark box */
     color: var(--font-color1);
     margin: 0 auto;
     width: 92%;
@@ -159,4 +313,3 @@ h1 {
     line-height: 1.45;
   }
 }
-

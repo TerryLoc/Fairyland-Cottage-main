@@ -7,6 +7,8 @@ __pycache__/
 node_modules/
 .github/
 cloudinary_python.txt
+# payment secrets
+/config.php
 # runtime / private
 /data/
 /private_downloads/

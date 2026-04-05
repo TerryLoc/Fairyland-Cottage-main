@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "badge-maker": "^3.3.1",
     "bootstrap": "^5.3.3"
